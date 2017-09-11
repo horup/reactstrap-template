@@ -23,7 +23,7 @@ module.exports = {
 
     plugins: [
         new HtmlWebpackPlugin({
-            title:'Martini',
+            title:'reactstrap-template',
             hash: true,
             filename: './index.html'
         }),
