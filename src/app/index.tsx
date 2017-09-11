@@ -1,6 +1,5 @@
 import * as React from 'react';
 import {Container, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-
 export default class App extends React.Component<any, any>
 {
     render()

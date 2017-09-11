@@ -1,5 +1,4 @@
 require("bootstrap/dist/css/bootstrap.css");
-//require("popper.js");
 require("./style.css");
 import * as React from 'react';
 import * as Dom from 'react-dom';
