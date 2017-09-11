@@ -1,10 +1,10 @@
+require("bootstrap/dist/css/bootstrap.css");
+//require("popper.js");
 require("./style.css");
-require("bootstrap/dist/css/bootstrap.css")
-require("bootstrap");
 import * as React from 'react';
 import * as Dom from 'react-dom';
-import Test from './test';
+import App from './app';
 
 var div = document.createElement("div");   
 document.body.appendChild(div);        
-Dom.render(<Test/>, div);
+Dom.render(<App/>, div);
