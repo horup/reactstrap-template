@@ -23,7 +23,7 @@ module.exports = {
 
     plugins: [
         new HtmlWebpackPlugin({
-            title:'reactstrap-template',
+            template: './src/index.html',
             hash: true,
             filename: './index.html'
         }),
