@@ -5,9 +5,7 @@ export default class Home extends React.Component<any, any>
     {
         return (
             <div>
-                <a href="#/forms">forms</a><br/>
-                <a href="#/about">about</a><br/>
-                <a href="#/">home</a><br/>
+                Welcome to reactstrap-template...
             </div>
         )
     }
