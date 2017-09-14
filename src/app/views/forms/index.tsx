@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {Container, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-import {DatetimePicker} from '../../extensions';
-export class Forms extends React.Component<any, any>
+import {DatetimePicker} from '../../../extensions';
+export class FormsView extends React.Component<any, any>
 {
     render()
     {

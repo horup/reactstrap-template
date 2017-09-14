@@ -1,3 +1,3 @@
-export {Home} from './home';
-export {Forms} from './forms';
-export {Charts} from './charts';
+export {HomeView} from './home';
+export {FormsView} from './forms';
+export {ChartsView} from './charts';

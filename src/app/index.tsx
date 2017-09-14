@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Container, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import { DatetimePicker } from '../extensions';
 import { HashRouter, Route, Link } from 'react-router-dom';
-import { Home, Forms, Charts } from './views';
+import { HomeView, FormsView, ChartsView } from './views';
 import Header from './header';
 
 export default class App extends React.Component<any, any>
@@ -11,9 +11,9 @@ export default class App extends React.Component<any, any>
         return (
             <div>
                 <Header />
-                <Route exact path="/" component={Home} />
-                <Route path="/forms" component={Forms} />
-                <Route path="/about" component={About} />
+                <Route exact path="/" component={HomeView} />
+                <Route path="/forms" component={FormsView} />
+                <Route path="/charts" component={ChartsView} />
             </div>
         )
     }
