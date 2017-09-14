@@ -5,7 +5,7 @@ export class Home extends React.Component<any, any>
     {
         return (
             <div>
-                Welcome to reactstrap-template...
+                Welcome to reactstrap-template...<br/>
             </div>
         )
     }
