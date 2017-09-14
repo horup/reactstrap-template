@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { HashRouter, Route, Link } from 'react-router-dom';
-import { Nav, NavItem, NavLink} from 'reactstrap';
+import { Nav, Navbar, NavItem, NavLink} from 'reactstrap';
 export default class Header extends React.Component<any, any>
 {
     render()
