@@ -1,6 +1,5 @@
 import * as React from 'react';
 import {Container, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-import {DatetimePicker} from '../../../extensions';
 export class FormsView extends React.Component<any, any>
 {
     render()
@@ -8,7 +7,6 @@ export class FormsView extends React.Component<any, any>
         return (
             <Container fluid={true}>
                 <Form>
-                    <DatetimePicker />
                 <FormGroup>
                     <Label for="exampleEmail">Email</Label>
                     <Input type="email" name="email" id="exampleEmail" placeholder="with a placeholder" />
