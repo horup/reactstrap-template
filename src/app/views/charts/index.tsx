@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Charts } from '../../../extensions';
+import * as Charts from 'recharts';
 
 const BarchartExample = () => {
     const { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } = Charts;
