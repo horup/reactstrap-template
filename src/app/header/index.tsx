@@ -16,6 +16,9 @@ export default class Header extends React.Component<any, any>
                 <NavItem>
                     <NavLink href="#/charts">Charts</NavLink>
                 </NavItem>
+                <NavItem>
+                    <NavLink href="#/redux">Redux</NavLink>
+                </NavItem>
             </Nav>
         )
     }
