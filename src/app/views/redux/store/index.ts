@@ -1,41 +1,59 @@
 import * as Actions from './actions';
 import {combineReducers, Action} from 'redux';
+import {Todo} from '../todolist';
+
+interface TodoHistory
+{
+    now:Todo[],
+    past:Todo[][]
+}
 
 export class AppState
 {
-    name:string = name();
-    count:number = count();
+    todos:TodoHistory;
 }
 
-const name = (state:string = "Default", action:Action = null):string =>
+const todos = (todos:TodoHistory = {now:[], past:[]}, action:Action = null):TodoHistory =>
 {
     switch (action.type)
     {
-        case Actions.Type.SetName:
+        case Actions.Type.AddTodo:
         {
-            return (action as any).name;
+            let newTodo:Todo = {id:todos.now.length + 1, todo:(action as any).todo, completed:false};
+            let now = [...todos.now];
+            let past = [...todos.past];
+            now.push(newTodo);
+            past.push(now);
+            
+            return {now:now, past:past};
         }
-        default:
-        return state;
-    }
-}
+        case Actions.Type.CompleteTodo:
+        {
+            let id = (action as any).id;
+            let now = todos.now.map(todo => todo.id != id ? todo : {...todo, ...{completed:!todo.completed}});
+            let past = [...todos.past];
+            past.push(now);
 
-const count = (state:number = 0, action:Action = null):number =>
-{
-    switch (action.type)
-    {
-        case Actions.Type.SetName:
+            return {now:now, past:past};
+        }
+        case Actions.Type.Undo:
         {
-            return state + 1;
+            if (todos.past.length > 1)
+            {
+                let past = [...todos.past];
+                past.pop();
+
+                return {now:past[past.length-1], past:past};
+            }
+            return {now:[], past:[]};
         }
         default:
-        return state;
+        return todos;
     }
 }
 
 export const app = combineReducers({
-    count,
-    name
+    todos
 }) as (state:AppState, action:Action)=>AppState
 
 export {Actions};
