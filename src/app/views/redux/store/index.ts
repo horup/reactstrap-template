@@ -17,7 +17,7 @@ const todos = (todos:TodoHistory = {now:[], past:[]}, action:Action = null):Todo
 {
     switch (action.type)
     {
-        case Actions.Type.AddTodo:
+        case Actions.ADD_TODO:
         {
             let newTodo:Todo = {id:todos.now.length + 1, todo:(action as any).todo, completed:false};
             let now = [...todos.now];
@@ -27,7 +27,7 @@ const todos = (todos:TodoHistory = {now:[], past:[]}, action:Action = null):Todo
             
             return {now:now, past:past};
         }
-        case Actions.Type.CompleteTodo:
+        case Actions.COMPLETE_TODO:
         {
             let id = (action as any).id;
             let now = todos.now.map(todo => todo.id != id ? todo : {...todo, ...{completed:!todo.completed}});
@@ -36,7 +36,7 @@ const todos = (todos:TodoHistory = {now:[], past:[]}, action:Action = null):Todo
 
             return {now:now, past:past};
         }
-        case Actions.Type.Undo:
+        case Actions.UNDO:
         {
             if (todos.past.length > 1)
             {

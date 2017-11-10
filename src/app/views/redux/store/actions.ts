@@ -1,24 +1,21 @@
 import {Action} from 'redux';
 
-export enum Type
-{
-    AddTodo = "AddTodo",
-    CompleteTodo = "CompleteTodo",
-    Undo = "Undo"
-}
+export const ADD_TODO = "ADD_TODO";
+export const COMPLETE_TODO = "COMPLETE_TODO";
+export const UNDO = "UNDO";
 
 export let addTodo = (todo:string) =>
 {
-    return {type:Type.AddTodo, todo:todo}
+    return {type:ADD_TODO, todo:todo}
 }
 
 export let completeTodo = (id:number) =>
 {
-    return {type:Type.CompleteTodo, id:id}
+    return {type:COMPLETE_TODO, id:id}
 }
 
 export let undo = () =>
 {
-    return {type:Type.Undo}
+    return {type:UNDO}
 }
 
