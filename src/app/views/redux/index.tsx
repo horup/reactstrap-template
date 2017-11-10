@@ -2,18 +2,17 @@ import * as React from 'react';
 import {Input} from 'reactstrap';
 import {Provider, connect} from 'react-redux';
 import {createStore} from 'redux';
-import {AppState, app} from './reducers';
-import HelloName from './helloname';
-import * as Actions from './actions';
+import * as Store from './store';
 
-let store = createStore(app);
+
+let store = createStore(Store.app);
 
 const Hello = ({name, onClick, count}:{name:string, onClick:()=>any, count:number}) =>
 {
     return <div onClick={()=>onClick()}>Hello {name} + {count}</div>
 }
 
-const HelloContainer = connect((state:AppState)=>{return {name:state.name, count:state.count}}, dispatch=>{return {onClick:()=>dispatch(Actions.setName("Awesome:"))}})(Hello);
+const HelloContainer = connect((state:Store.AppState)=>{return {name:state.name, count:state.count}}, dispatch=>{return {onClick:()=>dispatch(Store.Actions.setName("Awesome:"))}})(Hello);
 
 export class ReduxView extends React.Component<any, any>
 {
